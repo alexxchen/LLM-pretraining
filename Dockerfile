@@ -1,5 +1,5 @@
 #################### BASE BUILD IMAGE ####################
-FROM huggingface/transformers-pytoch-gpu AS olmo-env
+FROM huggingface/transformers-pytorch-gpu AS olmo-env 
 
 RUN --mount=type=cache,target=/root/.cache/pip \
     python3 -m pip install ai2-olmo
