@@ -7,7 +7,7 @@ FROM docker.1ms.run/huggingface/transformers-pytorch-gpu:latest AS olmo-env
 RUN --mount=type=cache,target=/root/.cache/pip \
     python3 -m pip freeze
 
-ENTRYPOINT ["/bin/bash"]
+# ENTRYPOINT ["/bin/bash"]
 
 #################### BASE BUILD IMAGE ####################
 
