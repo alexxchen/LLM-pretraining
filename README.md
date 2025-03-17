@@ -22,6 +22,11 @@ The script will automatically:
 1. Pull the pre-built Docker image and convert it into singularity image
 2. Launch Slurm job with optimal default parameters
 
+You can inspect the data during training by:
+```
+singularity exec olmo.sif python inspect_train_data.py --checkpoint_num 100 ./workspace/OLMo-1B-dolma2-tokenizer-wiki_{date}_{your slurm job id} 0 10
+```
+
 ### Post Training:
 
 You can easily convert the pytorch checkpoints into safetensors by using command:
