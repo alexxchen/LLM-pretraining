@@ -22,6 +22,17 @@ The script will automatically:
 1. Pull the pre-built Docker image and convert it into singularity image
 2. Launch Slurm job with optimal default parameters
 
+### Post Training:
+
+You can easily convert the pytorch checkpoints into safetensors by using command:
+```
+./convert_to_hf.sh \
+    --checkpoint-dir ./workspace/OLMo-1B-dolma2-tokenizer-wiki_{date}_{your slurm job id}/step2800-unsharded/ \
+    --destination-dir ./{your output dir}/ \
+    --tokenizer ./tokenizers/allenai_dolma2.json
+```
+And continue enhancing the base model into a reasoning model using our GRPO training code (https://github.com/alexxchen/open-r1-vision)
+
 ### License 📄
 Apache 2.0 - See LICENSE for details
 
