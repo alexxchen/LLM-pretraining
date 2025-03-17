@@ -13,7 +13,7 @@ export NUM_THREADS=16
 export NCCL_DEBUG='VERSION'
 export TIME=$(date +%Y-%m-%d-%H-%M-%S)
 
-BINDS="--bind /opt/app/nvidia/535.154.05/:/usr/local/nvidia"
+# BINDS="--bind /opt/app/nvidia/535.154.05/:/usr/local/nvidia"
 
 # Execute the container
 singularity exec --cleanenv --nv  \
