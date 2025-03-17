@@ -16,14 +16,14 @@ export TIME=$(date +%Y-%m-%d-%H-%M-%S)
 BINDS="--bind /opt/app/nvidia/535.154.05/:/usr/local/nvidia"
 
 # Execute the container
-/opt/app/singularity/bin/singularity exec --cleanenv --nv  \
+singularity exec --cleanenv --nv  \
     ${BINDS} \
     --env OMP_NUM_THREADS=${NUM_THREADS} \
     --env MKL_NUM_THREADS=${NUM_THREADS} \
     --env NUMEXPR_NUM_THREADS=${NUM_THREADS} \
     --env SLURM_JOB_ID=${SLURM_JOB_ID} \
     --env TIME=${TIME} \
-    /home/chenjh/llm/olmo.sif \
+    olmo.sif \
     bash -c ' \
         torchrun --standalone --nnodes=1 --nproc_per_node=8 train.py OLMo-1B.yaml
     '
